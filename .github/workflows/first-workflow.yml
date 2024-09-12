@@ -1,0 +1,22 @@
+# Add a manual trigger to the workflow
+on:
+    workflow_dispatch:
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo Statement 1
+              run: echo "Hello from Job 1 - Statement 1"
+            - name: Echo Statement 2
+              run: echo "Hello from Job 1 - Statement 2"
+
+    job2:
+        needs: job1
+        runs-on: ubuntu-latest
+        steps:
+            - name: Cowsays
+              uses: mscoutermarsh/cowsays-action@master
+              with:
+                text: 'Ready for prod--ship it!'
+                color: 'magenta'
