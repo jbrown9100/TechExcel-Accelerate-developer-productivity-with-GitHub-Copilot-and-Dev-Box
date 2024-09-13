@@ -13,6 +13,8 @@ var registryName = '${uniqueString(resourceGroup().id)}mpnpreg'
 var registrySku = 'Standard'
 var imageName = 'techexcel/dotnetcoreapp'
 var startupCommand = ''
+var redisCacheName = '${uniqueString(resourceGroup().id)}-mpnp-redis'
+var redisCacheSku = 'Basic'
 
 // TODO: complete this script
 resource redisCache 'Microsoft.Cache/Redis@2023-08-01' = {
