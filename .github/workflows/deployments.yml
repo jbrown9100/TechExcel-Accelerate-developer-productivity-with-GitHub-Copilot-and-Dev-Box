@@ -27,5 +27,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         ##resourceGroupName: ${{ secrets.AZURE_RG }}
-        resoruceGroupName: ${{ vars.AZURE_RG }}
+        resourceGroupName: ${{ vars.AZURE_RG }}
         template: ./src/InfrastructureAsCode/main.bicep
