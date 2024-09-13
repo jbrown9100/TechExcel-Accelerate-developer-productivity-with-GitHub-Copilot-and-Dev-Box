@@ -21,10 +21,6 @@ jobs:
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-    # Debug Resource Group
-    - name: Debug Resource Group
-      run: echo "Resource Group: ${{ secrets.AZURE_RG }}"
-
     # Deploy ARM template
     - name: Run ARM deploy
       uses: azure/arm-deploy@v2
