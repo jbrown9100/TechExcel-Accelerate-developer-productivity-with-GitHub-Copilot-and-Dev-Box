@@ -12,16 +12,20 @@ jobs:
       id-token: write
     steps:
     # Checkout code
-    - uses: actions/checkout@main
+    - uses: actions/checkout@v2
 
-      # Log into Azure
+    # Log into Azure
     - uses: azure/login@v2.1.1
       with:
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      # Deploy ARM template
+    # Debug Resource Group
+    - name: Debug Resource Group
+      run: echo "Resource Group: ${{ secrets.AZURE_RG }}"
+
+    # Deploy ARM template
     - name: Run ARM deploy
       uses: azure/arm-deploy@v2
       with:
